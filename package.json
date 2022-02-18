@@ -1,0 +1,38 @@
+{
+  "name": "tech-development-scoop",
+  "version": "1.0.0",
+  "description": "An online community discussing the latest tips and trends in technology",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polizoto/tech-development-scoop.git"
+  },
+  "keywords": [
+    "tech",
+    "blog",
+    "developer",
+    "MVC"
+  ],
+  "author": "Joseph Polizzotto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/polizoto/tech-development-scoop/issues"
+  },
+  "homepage": "https://github.com/polizoto/tech-development-scoop#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.16.1"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
