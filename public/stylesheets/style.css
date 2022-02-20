@@ -32,6 +32,26 @@
     color: var(--dark);
     line-height: 1.25;
   }
+
+  nav {
+    padding: 0px 0px 10px 0px;
+  }
+
+  nav a {
+    color: var(--secondary);
+    font-size: 1.2rem;
+    padding: 0px 15px 0px 15px;
+  }
+
+  nav a:hover {
+    color: var(--dark);
+    background-color: var(--secondary);
+  }
+
+  nav a:focus{
+    color: var(--dark);
+    background-color: var(--secondary);
+  }
   
   main {
     margin: 20px auto;
@@ -157,6 +177,13 @@
     background-color: var(--dark);
     padding: 2.5%;
     border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
+/* NEW */
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card-header h3 {
+    color: var(--primary) #ccdad1;
   }
   
   .card-body {
@@ -201,7 +228,7 @@
   
   /* FLEX CONTENT */
   .flex-row {
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
   }
   

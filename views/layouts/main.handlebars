@@ -13,12 +13,10 @@
 <body class="flex-column min-100-vh">
   <header class="hero">
     <nav>
-      {{#if loggedIn}}
         <a href="/dashboard">dashboard</a>
-          <button id="logout" class="btn-no-style">logout</button>
-          {{else}}
+        <a id="logout" href="/login">logout</a>
+          {{!-- <button id="logout" class="btn-no-style">logout</button> --}}
         <a href="/login">login</a>
-      {{/if}}
     </nav>
     <h1>
       <a class="app-title" href="/">Tech Development Scoop</a>
@@ -31,9 +29,7 @@
       Thanks for visiting!
     </footer>
 
-{{#if loggedIn}}
 <script src="/javascript/logout.js"></script>
-{{/if}}
 
 </body>
 
