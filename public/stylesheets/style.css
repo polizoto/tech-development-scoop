@@ -164,6 +164,23 @@
   .icon-success {
     color: rgb(29, 153, 255);
   }
+
+  textarea, input {
+    padding: .55;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  textarea:focus, input:focus {
+    outline: none;
+    border: 1px solid #3486eb;
+  }
+
+  textarea {
+    min-width: 100%;
+    min-height: 100px;;
+
+  }
   
   /* CARDS */
   .card {

@@ -8,6 +8,7 @@
       </div>
         <div class="card-body">
           <p>{{post.post_content}}</p>
+          <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
         </div>
       </div>
       {{/each}}
