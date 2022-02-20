@@ -10,12 +10,14 @@ module.exports = {
         }
         return word;
       },
-      format_url: url => {
-        return url
-          .replace('http://', '')
-          .replace('https://', '')
-          .replace('www.', '')
-          .split('/')[0]
-          .split('?')[0];
+      isShort: content => {
+        if (content.length >= 1 && content <= 600) {
+          return `${content}`;
+        }
+      },
+      isTooLong: content => {
+        if (content.length >= 1 && content <= 200) {
+          return `${content}`;
+        }
       }
   }
