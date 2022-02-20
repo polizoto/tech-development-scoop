@@ -1,11 +1,20 @@
 const router = require('express').Router();
-const { Post, User } = require('../../models');
+const sequelize = require('../../config/connection');
+const { Post, User, Comment } = require('../../models');
 
 router.get('/', (req, res) => {
     Post.findAll({
-        attributes: ['id', 'post_content', 'title', 'created_at'],
+        attributes: ['id', 'post_content', 'title', 'created_at', [sequelize.literal('(SELECT COUNT(*) FROM comment WHERE post.id = comment.post_id)'), 'comment_count']],
         order: [['created_at', 'DESC']], 
         include: [
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                include : {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
             {
               model: User,
               attributes: ['username']
@@ -24,8 +33,16 @@ router.get('/', (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'post_content', 'title', 'created_at'],
+      attributes: ['id', 'post_content', 'title', 'created_at', [sequelize.literal('(SELECT COUNT(*) FROM comment WHERE post.id = comment.post_id)'), 'comment_count']],
       include: [
+        {
+            model: Comment,
+            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+            include : {
+                model: User,
+                attributes: ['username']
+            }
+        },
         {
           model: User,
           attributes: ['username']
