@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
+const withAuth = require('../utils/auth');
 const { Post, User, Comment } = require('../models');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     if (req.session.loggedIn) {
         Post.findAll({
             where: {
@@ -27,7 +28,7 @@ router.get('/', (req, res) => {
       }
   });
 
-  router.get('/create', (req, res) => {
+  router.get('/create', withAuth, (req, res) => {
     if (req.session.loggedIn) {
         res.render('create', { layout: 'user.handlebars', loggedIn: true });
     }
