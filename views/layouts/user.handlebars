@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Development Scoop</title>
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body class="flex-column min-100-vh">
+  <header class="hero">
+    <nav>
+        <a href="/">Home</a>
+        {{#if loggedIn}}
+        <a href="/dashboard">Dashboard</a>
+        <a id="logout" href="/login">Logout</a>
+          {{else}}
+        <a href="/login">Login</a>
+          {{/if}}
+    </nav>
+    <h1>
+      <a class="app-title" href="/">Your Dashboard</a>
+    </h1>
+  </header>
+  <main class="flex-row justify-space-between">
+      {{{ body }}}
+    </main>
+    <footer>
+
+    </footer>
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+</body>
+
+</html>
