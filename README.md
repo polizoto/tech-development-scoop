@@ -7,6 +7,7 @@ A technology blog for active developers
 - blogposts consist of a title, content, author, date, and comments
 - user dashboard for viewing, editing, or deleting your posts
 - user authentication with password encryption
+- app logs user out of app after two minutes of inactivity
 - simple, intuitive design
 
 ## Local Installation
