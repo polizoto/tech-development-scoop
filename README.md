@@ -19,7 +19,8 @@ A technology blog for active developers
 
 ## Screenshot
 
-
+![screenshot of Tech Development Scoop](/screenshot.png)
 
 ## Deployed Application
 
+<a href="" target="_blank">Live App</a>
