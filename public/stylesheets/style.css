@@ -84,6 +84,13 @@
     transform: translate(0, 0);
     box-shadow: 2px 2px var(--dark);
   }
+
+  .btn:focus {
+    color: var(--primary);
+    background-color: var(--tertiary);
+    transform: translate(0, 0);
+    box-shadow: 2px 2px var(--dark);
+  }
   
   .btn-inline {
     display: inline;
@@ -131,6 +138,14 @@
     border-radius: var(--border-radius);
     box-shadow: 6px 5px var(--light-dark);
   }
+
+  .app-title:hover {
+    background-color: var(--secondary);
+  }
+
+  .app-title:focus {
+    background-color: var(--secondary);
+  }
   
   .list-group {
     padding: 0;
@@ -148,6 +163,25 @@
   
   .list-item:hover {
     background-color: var(--dark);
+  }
+
+  .edit-link {
+    color: var(--dark);
+    margin: 5px 0px 5px 0px;
+    padding: 2px;
+  }
+
+  .edit-link:hover {
+    color: var(--primary);
+    background-color: var(--dark);
+    border-radius: 4px;
+
+  }
+
+  .edit-link:focus {
+    color: var(--primary);
+    background-color: var(--dark);
+    border-radius: 4px;
   }
   
   .status-icon {
@@ -226,6 +260,15 @@
     font-size: 1.2rem;
     border: 2px solid var(--light-dark);
     border-radius: var(--border-radius);
+  }
+
+  .user-post {
+    display: flex; 
+    justify-content: space-between;
+  }
+
+  .user-post-date {
+    float:right;
   }
   
   /* HEIGHT / WIDTH UTILS */

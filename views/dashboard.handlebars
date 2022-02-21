@@ -1,23 +1,12 @@
-{{!-- <div class="card">
-      <h3 class="card-header">Create New Post</h2>
-<form id="new-post-form" class="card-body">
-    <div>
-      <label class="form-label" for="post-title">Title</label>
-      <input class="form-input" type="text" id="post-title" name="post-title" />
-    </div>
-    <div>
-      <label class="form-label" for="post-url">Content</label>
-      <input class="form-input" id="post-url" name="post-url" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-  </div> --}}
+  {{#if posts.length}}
+  <section>
+    <h2>Your Posts</h2>
   <div class="post-list">
   {{#each posts as |post|}}
     {{> user-post post }}
       {{/each}}
 </div>
-<form id="create-post-form">
-    <button type="submit" class="btn">Add New Post</button>
-</form>
+</section>
+{{/if}}
+<a href="/dashboard/create/" class="btn">Add New Post</a>
 

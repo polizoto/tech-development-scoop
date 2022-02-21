@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     if (req.session.loggedIn) {
         Post.findAll({
             where: {
-                user_id: 1
+                user_id: req.session.user_id
               },
           attributes: [
             'id',
@@ -18,48 +18,20 @@ router.get('/', (req, res) => {
         })
           .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('dashboard', { posts, layout: 'user.handlebars', loggedIn: req.session.loggedIn});
+            res.render('dashboard', { posts, layout: 'user.handlebars', loggedIn: true });
           })
           .catch(err => {
             console.log(err);
             res.status(500).json(err);
           });
       }
-      Post.findAll({
-        attributes: [
-          'id',
-          'post_content',
-          'title',
-          'created_at',
-          [sequelize.literal('(SELECT COUNT(*) FROM comment WHERE post.id = comment.post_id)'), 'comment_count']
-        ],
-        include: [
-          {
-            model: Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-            include: {
-              model: User,
-              attributes: ['username']
-            }
-          },
-          {
-            model: User,
-            attributes: ['username']
-          }
-        ]
-      })
-        .then(dbPostData => {
-          const posts = dbPostData.map(post => post.get({ plain: true }));
-          res.render('homepage', {
-            posts,
-            loggedIn: req.session.loggedIn,
-            layout: 'main.handlebars'
-          });
-        })
-        .catch(err => {
-          console.log(err);
-          res.status(500).json(err);
-        });
+  });
+
+  router.get('/create', (req, res) => {
+    if (req.session.loggedIn) {
+        res.render('create', { layout: 'user.handlebars', loggedIn: true });
+    }
+
   });
 
 module.exports = router;
