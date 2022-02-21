@@ -13,11 +13,12 @@
 <body class="flex-column min-100-vh">
   <header class="hero">
     <nav>
+        <a href="/">Home</a>
         {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
-        <a id="logout" h  ref="/login">logout</a>
+        <a href="/dashboard">Dashboard</a>
+        <a id="logout" href="/login">Logout</a>
           {{else}}
-        <a href="/login">login</a>
+        <a href="/login">Login</a>
           {{/if}}
     </nav>
     <h1>
