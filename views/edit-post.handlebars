@@ -1,5 +1,5 @@
 <article>
-  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <a class="edit-link" href="/dashboard"> &larr; Back to dashboard</a>
   <div class="card">
   <h3 class="card-header">Edit Post</h3>
   <form class="edit-post-form" class="card-body">
@@ -9,10 +9,10 @@
     <div>
       Created by you on {{format_date post.created_at}}
       |
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      <a class="edit-link" href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
     </div>
-    <button id="edit-post-btn" type="button" class="btn">Save post</button>
-    <button id="delete-post-btn" type="button" class="btn">Delete post</button>
+    <button id="edit-post-btn" type="button" class="btn">Update</button>
+    <button id="delete-post-btn" type="button" class="btn">Delete</button>
   </form>
   </div>
 </article>
@@ -22,7 +22,7 @@
   </div>
 
   <div>
-    <button id="comment-form-btn" class="btn" type="button">add comment</button>
+    <button id="comment-form-btn" class="btn" type="button">Add comment</button>
   </div>
 </form>
 
