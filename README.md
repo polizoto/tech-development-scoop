@@ -23,4 +23,4 @@ A technology blog for active developers
 
 ## Deployed Application
 
-<a href="" target="_blank">Live App</a>
+<a href="https://immense-badlands-14812.herokuapp.com/" target="_blank">Live App</a>
